@@ -7,13 +7,15 @@ class TestTranslator(unittest.TestCase):
 
     def test_english_text(self):
         """Tests funnction englishText in translator module"""
-        self.assertIsNotNone(englishToFrench('NotNull'))
-        self.assertEqual(englishToFrench('Hello'), 'Bonjour')
 
-    def test_frenchText(self):
+        self.assertEqual(englishToFrench('Hello'), 'Bonjour')
+        self.assertNotEqual(englishToFrench('NotEqual'), 'Bonjour')
+
+    def test_french_text(self):
         """Tests funnction frenchText in translator module"""
-        self.assertIsNotNone(frenchToEnglish('NotNull'))
+        
         self.assertEqual(frenchToEnglish('Bonjour'), 'Hello')
+        self.assertNotEqual(frenchToEnglish('NotEqual'), 'Hello')
 
 
 if __name__ == '__main__':
